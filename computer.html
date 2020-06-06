@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJ Store</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="css/fontawesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Navbar Starting -->
+    <nav class="navbar navbar-expand-md navbar-light bg-light">
+        <a class="navbar-brand" href="#"><span>AJ</span> Store<span>.</span></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+            aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">Home<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/services.html">Services</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Category
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="./food.html">Fruit</a>
+                        <a class="dropdown-item active" href="./computer.html">Computer</a>
+                        <a class="dropdown-item" href="./vegetable.html">Vegetable</a>
+                    </div>
+                </li>
+            </ul>
+
+            <div class="mx-2 modals">
+                <a style="text-decoration: none;" href="addToCart.html" class="addtocartStyling">
+                    <i style="color: orangered !important; font-size: 20px;" class="fa fa-shopping-cart mr-3"
+                        aria-hidden="true"></i>
+                </a>
+                <button class="btn btn-primary" data-toggle="modal" data-target="#loginModal">Login</button>
+                <button class="btn btn-primary" data-toggle="modal" data-target="#signupModal">SignUp</button>
+            </div>
+        </div>
+    </nav>
+
+
+    <!------------------------------------- Login and SignUp Modals ------------------------------------->
+
+    <!-- Login Modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">Login to AJ Store</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Email address</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1"
+                                aria-describedby="emailHelp">
+                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                                else.</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Password</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1">
+                        </div>
+                        <div class="form-group form-check">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Login</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SignUp Modal -->
+    <div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="signupModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="signupModalLabel">Get an AJ Store Account</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Email address</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1"
+                                aria-describedby="emailHelp">
+                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                                else.</small>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col">
+                                <input type="text" class="form-control" placeholder="First name">
+                            </div>
+                            <div class="col">
+                                <input type="text" class="form-control" placeholder="Last name">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Password</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1">
+                        </div>
+                        <div class="form-group">
+                            <label for="confirmexampleInputPassword1">Confirm Password</label>
+                            <input type="password" class="form-control" id="confirmexampleInputPassword1">
+                        </div>
+                        <div class="form-group form-check">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary">SignUp</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navbar Ending -->
+
+
+<!-- computer products starting-->
+
+    <div class="album py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card mb-4 shadow-sm">
+                        <img src="./assets/computer/computer10.jpeg" class="img-fluid" alt="">
+                        <div class="card-body">
+                            <h3 style="font-size: xx-large;" class="text-muted mb-2">Computer</h3>
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                                additional content. This content is a little bit longer.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="float-left">
+                                    <button class="btn btn-secondary mt-2">Purchase</button>
+                                </div>
+                                <div class="float-right">
+                                    <h4>Price : $100</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card mb-4 shadow-sm">
+                        <img src="./assets/computer/computer10.jpeg" class="img-fluid" alt="">
+                        <div class="card-body">
+                            <h3 style="font-size: xx-large;" class="text-muted mb-2">Computer</h3>
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                                additional content. This content is a little bit longer.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="float-left">
+                                    <button class="btn btn-secondary mt-2">Purchase</button>
+                                </div>
+                                <div class="float-right">
+                                    <h4>Price : $100</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card mb-4 shadow-sm">
+                        <img src="./assets/computer/computer10.jpeg" class="img-fluid" alt="">
+                        <div class="card-body">
+                            <h3 style="font-size: xx-large;" class="text-muted mb-2">Computer</h3>
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                                additional content. This content is a little bit longer.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="float-left">
+                                    <button class="btn btn-secondary mt-2">Purchase</button>
+                                </div>
+                                <div class="float-right">
+                                    <h4>Price : $100</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card mb-4 shadow-sm">
+                        <img src="./assets/computer/computer10.jpeg" class="img-fluid" alt="">
+                        <div class="card-body">
+                            <h3 style="font-size: xx-large;" class="text-muted mb-2">Computer</h3>
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                                additional content. This content is a little bit longer.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="float-left">
+                                    <button class="btn btn-secondary mt-2">Purchase</button>
+                                </div>
+                                <div class="float-right">
+                                    <h4>Price : $100</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card mb-4 shadow-sm">
+                        <img src="./assets/computer/computer10.jpeg" class="img-fluid" alt="">
+                        <div class="card-body">
+                            <h3 style="font-size: xx-large;" class="text-muted mb-2">Computer</h3>
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                                additional content. This content is a little bit longer.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="float-left">
+                                    <button class="btn btn-secondary mt-2">Purchase</button>
+                                </div>
+                                <div class="float-right">
+                                    <h4>Price : $100</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card mb-4 shadow-sm">
+                        <img src="./assets/computer/computer10.jpeg" class="img-fluid" alt="">
+                        <div class="card-body">
+                            <h3 style="font-size: xx-large;" class="text-muted mb-2">Computer</h3>
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                                additional content. This content is a little bit longer.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="float-left">
+                                    <button class="btn btn-secondary mt-2">Purchase</button>
+                                </div>
+                                <div class="float-right">
+                                    <h4>Price : $100</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card mb-4 shadow-sm">
+                        <img src="./assets/computer/computer10.jpeg" class="img-fluid" alt="">
+                        <div class="card-body">
+                            <h3 style="font-size: xx-large;" class="text-muted mb-2">Computer</h3>
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                                additional content. This content is a little bit longer.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="float-left">
+                                    <button class="btn btn-secondary mt-2">Purchase</button>
+                                </div>
+                                <div class="float-right">
+                                    <h4>Price : $100</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card mb-4 shadow-sm">
+                        <img src="./assets/computer/computer10.jpeg" class="img-fluid" alt="">
+                        <div class="card-body">
+                            <h3 style="font-size: xx-large;" class="text-muted mb-2">Computer</h3>
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                                additional content. This content is a little bit longer.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="float-left">
+                                    <button class="btn btn-secondary mt-2">Purchase</button>
+                                </div>
+                                <div class="float-right">
+                                    <h4>Price : $100</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card mb-4 shadow-sm">
+                        <img src="./assets/computer/computer10.jpeg" class="img-fluid" alt="">
+                        <div class="card-body">
+                            <h3 style="font-size: xx-large;" class="text-muted mb-2">Computer</h3>
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                                additional content. This content is a little bit longer.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="float-left">
+                                    <button class="btn btn-secondary mt-2">Purchase</button>
+                                </div>
+                                <div class="float-right">
+                                    <h4>Price : $100</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card mb-4 shadow-sm">
+                        <img src="./assets/computer/computer10.jpeg" class="img-fluid" alt="">
+                        <div class="card-body">
+                            <h3 style="font-size: xx-large;" class="text-muted mb-2">Computer</h3>
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                                additional content. This content is a little bit longer.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="float-left">
+                                    <button class="btn btn-secondary mt-2">Purchase</button>
+                                </div>
+                                <div class="float-right">
+                                    <h4>Price : $100</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card mb-4 shadow-sm">
+                        <img src="./assets/computer/computer10.jpeg" class="img-fluid" alt="">
+                        <div class="card-body">
+                            <h3 style="font-size: xx-large;" class="text-muted mb-2">Computer</h3>
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                                additional content. This content is a little bit longer.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="float-left">
+                                    <button class="btn btn-secondary mt-2">Purchase</button>
+                                </div>
+                                <div class="float-right">
+                                    <h4>Price : $100</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card mb-4 shadow-sm">
+                        <img src="./assets/computer/computer10.jpeg" class="img-fluid" alt="">
+                        <div class="card-body">
+                            <h3 style="font-size: xx-large;" class="text-muted mb-2">Computer</h3>
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                                additional content. This content is a little bit longer.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="float-left">
+                                    <button class="btn btn-secondary mt-2">Purchase</button>
+                                </div>
+                                <div class="float-right">
+                                    <h4>Price : $100</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card mb-4 shadow-sm">
+                        <img src="./assets/computer/computer10.jpeg" class="img-fluid" alt="">
+                        <div class="card-body">
+                            <h3 style="font-size: xx-large;" class="text-muted mb-2">Computer</h3>
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                                additional content. This content is a little bit longer.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="float-left">
+                                    <button class="btn btn-secondary mt-2">Purchase</button>
+                                </div>
+                                <div class="float-right">
+                                    <h4>Price : $100</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card mb-4 shadow-sm">
+                        <img src="./assets/computer/computer10.jpeg" class="img-fluid" alt="">
+                        <div class="card-body">
+                            <h3 style="font-size: xx-large;" class="text-muted mb-2">Computer</h3>
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                                additional content. This content is a little bit longer.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="float-left">
+                                    <button class="btn btn-secondary mt-2">Purchase</button>
+                                </div>
+                                <div class="float-right">
+                                    <h4>Price : $100</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card mb-4 shadow-sm">
+                        <img src="./assets/computer/computer10.jpeg" class="img-fluid" alt="">
+                        <div class="card-body">
+                            <h3 style="font-size: xx-large;" class="text-muted mb-2">Computer</h3>
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                                additional content. This content is a little bit longer.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="float-left">
+                                    <button class="btn btn-secondary mt-2">Purchase</button>
+                                </div>
+                                <div class="float-right">
+                                    <h4>Price : $100</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card mb-4 shadow-sm">
+                        <img src="./assets/computer/computer10.jpeg" class="img-fluid" alt="">
+                        <div class="card-body">
+                            <h3 style="font-size: xx-large;" class="text-muted mb-2">Computer</h3>
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                                additional content. This content is a little bit longer.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="float-left">
+                                    <button class="btn btn-secondary mt-2">Purchase</button>
+                                </div>
+                                <div class="float-right">
+                                    <h4>Price : $100</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card mb-4 shadow-sm">
+                        <img src="./assets/computer/computer10.jpeg" class="img-fluid" alt="">
+                        <div class="card-body">
+                            <h3 style="font-size: xx-large;" class="text-muted mb-2">Computer</h3>
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                                additional content. This content is a little bit longer.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="float-left">
+                                    <button class="btn btn-secondary mt-2">Purchase</button>
+                                </div>
+                                <div class="float-right">
+                                    <h4>Price : $100</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card mb-4 shadow-sm">
+                        <img src="./assets/computer/computer10.jpeg" class="img-fluid" alt="">
+                        <div class="card-body">
+                            <h3 style="font-size: xx-large;" class="text-muted mb-2">Computer</h3>
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                                additional content. This content is a little bit longer.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="float-left">
+                                    <button class="btn btn-secondary mt-2">Purchase</button>
+                                </div>
+                                <div class="float-right">
+                                    <h4>Price : $100</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+<!-- computer products ending-->
+
+
+
+    <!-- Footer Starting -->
+    <footer class="text-gray-700 body-font">
+        <div class="container px-5 py-24 mx-auto">
+            <div class="flex flex-wrap md:text-left text-center -mb-10 -mx-4">
+                <div class="lg:w-1/6 md:w-1/2 w-full px-4">
+                    <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3 footer_main_heading">
+                        CATEGORY 1</h2>
+                    <nav class="list-none mb-10">
+                        <li>
+                            <a class="text-gray-600 hover:text-gray-800 footer_links" href="#">First Link</a>
+                        </li>
+                        <li>
+                            <a class="text-gray-600 hover:text-gray-800 footer_links" href="#">Second Link</a>
+                        </li>
+                        <li>
+                            <a class="text-gray-600 hover:text-gray-800 footer_links" href="#">Third Link</a>
+                        </li>
+                        <li>
+                            <a class="text-gray-600 hover:text-gray-800 footer_links" href="#">Fourth Link</a>
+                        </li>
+                    </nav>
+                </div>
+                <div class="lg:w-1/6 md:w-1/2 w-full px-4">
+                    <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3 footer_main_heading">
+                        CATEGORY 2</h2>
+                    <nav class="list-none mb-10">
+                        <li>
+                            <a class="text-gray-600 hover:text-gray-800 footer_links" href="#">First Link</a>
+                        </li>
+                        <li>
+                            <a class="text-gray-600 hover:text-gray-800 footer_links" href="#">Second Link</a>
+                        </li>
+                        <li>
+                            <a class="text-gray-600 hover:text-gray-800 footer_links" href="#">Third Link</a>
+                        </li>
+                        <li>
+                            <a class="text-gray-600 hover:text-gray-800 footer_links" href="#">Fourth Link</a>
+                        </li>
+                    </nav>
+                </div>
+                <div class="lg:w-1/6 md:w-1/2 w-full px-4">
+                    <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3 footer_main_heading">
+                        CATEGORY 3</h2>
+                    <nav class="list-none mb-10">
+                        <li>
+                            <a class="text-gray-600 hover:text-gray-800 footer_links" href="#">First Link</a>
+                        </li>
+                        <li>
+                            <a class="text-gray-600 hover:text-gray-800 footer_links" href="#">Second Link</a>
+                        </li>
+                        <li>
+                            <a class="text-gray-600 hover:text-gray-800 footer_links" href="#">Third Link</a>
+                        </li>
+                        <li>
+                            <a class="text-gray-600 hover:text-gray-800 footer_links" href="#">Fourth Link</a>
+                        </li>
+                    </nav>
+                </div>
+                <div class="lg:w-1/6 md:w-1/2 w-full px-4">
+                    <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3 footer_main_heading">
+                        CATEGORY 4</h2>
+                    <nav class="list-none mb-10">
+                        <li>
+                            <a class="text-gray-600 hover:text-gray-800 footer_links" href="#">First Link</a>
+                        </li>
+                        <li>
+                            <a class="text-gray-600 hover:text-gray-800 footer_links" href="#">Second Link</a>
+                        </li>
+                        <li>
+                            <a class="text-gray-600 hover:text-gray-800 footer_links" href="#">Third Link</a>
+                        </li>
+                        <li>
+                            <a class="text-gray-600 hover:text-gray-800 footer_links" href="#">Fourth Link</a>
+                        </li>
+                    </nav>
+                </div>
+                <div class="lg:w-1/6 md:w-1/2 w-full px-4">
+                    <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3 footer_main_heading">
+                        CATEGORY 5</h2>
+                    <nav class="list-none mb-10">
+                        <li>
+                            <a class="text-gray-600 hover:text-gray-800 footer_links" href="#">First Link</a>
+                        </li>
+                        <li>
+                            <a class="text-gray-600 hover:text-gray-800 footer_links" href="#">Second Link</a>
+                        </li>
+                        <li>
+                            <a class="text-gray-600 hover:text-gray-800 footer_links" href="#">Third Link</a>
+                        </li>
+                        <li>
+                            <a class="text-gray-600 hover:text-gray-800 footer_links" href="#">Fourth Link</a>
+                        </li>
+                    </nav>
+                </div>
+                <div class="lg:w-1/6 md:w-1/2 w-full px-4">
+                    <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3 footer_main_heading">
+                        CATEGORY 6</h2>
+                    <nav class="list-none mb-10">
+                        <li>
+                            <a class="text-gray-600 hover:text-gray-800 footer_links" href="#">First Link</a>
+                        </li>
+                        <li>
+                            <a class="text-gray-600 hover:text-gray-800 footer_links" href="#">Second Link</a>
+                        </li>
+                        <li>
+                            <a class="text-gray-600 hover:text-gray-800 footer_links" href="#">Third Link</a>
+                        </li>
+                        <li>
+                            <a class="text-gray-600 hover:text-gray-800 footer_links" href="#">Fourth Link</a>
+                        </li>
+                    </nav>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+    <!-- Footer Ending -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+    <!-- fontawesome link -->
+    <script src="./js/all.min.js"></script>
+</body>
+
+</html>
